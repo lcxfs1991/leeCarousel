@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Carousal</title> 
+</head>
+<style>
+        body{ background:#CCC;}
+ul,li { margin:0px; padding:0px;}
+#box{ width:320px; margin:0 auto;}
+.center{ width:240px; overflow:hidden; float:left;position:relative; height:60px;}
+ul{ position:absolute; left:0;}
+li{ width:50px; height:50px; background:#FFF; list-style:none; float:left; border:5px solid #CCC;}
+.left{ width:40px; height:50px; font-size:10px; float:left;}
+.right{ width:40px; height:50px; font-size:10px; float:right;}
+
+        
+
+</style>
+<body>
+
+<div id="box">
+<div class="menu" id="menu">
+<span class="left">向左走</span>
+<span class="right">向右走</span>
+</div>
+<div class="center">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+</div>
+
+<script>
+
+    window.onload=function(){
+    var con=document.getElementById("box").getElementsByTagName("ul")[0];
+    var oli=con.getElementsByTagName("li");
+    var but=document.getElementById("menu").getElementsByTagName("span");
+    var time=null;
+    var f=2;
+    
+    con.innerHTML = con.innerHTML+con.innerHTML;
+    //con.style.width=((oli[0].offsetWidth)*oli.length)+"px";
+    
+    but[0].onclick=function(){f=-2};
+    but[1].onclick=function(){f=2};
+
+    time=setInterval(function(){
+        con.style.left=con.offsetLeft-f+"px";
+        
+        if(con.offsetLeft< -con.offsetWidth/2)
+        {
+            con.style.left="0px";
+            }
+        else if(con.offsetLeft>0)
+        {
+            con.style.left=-con.offsetWidth/2+"px";
+            }
+        },30)
+    con.onmouseover=function (){clearTimeout(time)}
+    con.onmouseout=function (){
+        time=setInterval(function(){
+        con.style.left=con.offsetLeft-f+"px";
+        
+        if(con.offsetLeft< -con.offsetWidth/2)
+        {
+            con.style.left="0px";
+            }
+        else if(con.offsetLeft>0)
+        {
+            con.style.left=-con.offsetWidth/2+"px";
+            }
+        },30)}
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Carousal</title> 
+</head>
+<style>
+        
+        .carousal_wrap {
+            width: 800px;
+            min-height: 195px;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousal_item {
+            width: 800px;
+            position: absolute;
+            left: 0;
+           
+        }
+
+        .carousal_item img{
+            width: 800px;
+        }
+
+</style>
+<body>
+<!-- <div class="carousal_wrap">
+    <div class="carousal_item" id="slider1"><img src="/Alibaba_Frontend/carousal/s1.png" /></div>
+    <div class="carousal_item" id="slider2" ><img src="/Alibaba_Frontend/carousal/s2.png" /></div>
+    <div class="carousal_item"  ><img id="slider3" src="/Alibaba_Frontend/carousal/s3.png" /></div>
+</div> -->
+
+<div id="carousal_wrap">
+    
+</div>
+
+
+<script type="text/javascript" src="leeCarousel.js"></script>
+
+<script>
+
+    leeCarousel.init({
+
+        id: "carousal_wrap",
+        img: [
+            "/Alibaba_Frontend/carousal/s1.png",
+            "/Alibaba_Frontend/carousal/s2.png",
+            "/Alibaba_Frontend/carousal/s3.png"
+        ],
+        style: "default",
+        width: 800,
+        height: 195,
+        speed: 10
+    });
+</script>
+</body>
+</html>
