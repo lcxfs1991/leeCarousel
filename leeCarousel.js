@@ -120,9 +120,6 @@
 
                         }
 
-                        // console.log(that.imgItemArr[current].style.left);
-                        // console.log(that.imgItemArr[next].style.left);
-
                         outerMov = setInterval(outerInterval, gapTime);
 
                    }
