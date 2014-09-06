@@ -97,7 +97,7 @@
                    decreNext -= 10;
 
                    if (that.imgItemArr[current].style.left == "-"+that.width+"px"){
-                        
+
                         clearInterval(innerMov);
 
                         that.imgItemArr[current].style.left = that.width+"px";
@@ -119,6 +119,9 @@
                             pointer = 0;
 
                         }
+
+                        // console.log(that.imgItemArr[current].style.left);
+                        // console.log(that.imgItemArr[next].style.left);
 
                         outerMov = setInterval(outerInterval, gapTime);
 
