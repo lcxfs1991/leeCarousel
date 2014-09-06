@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>leeCarousal</title> 
-</head>
-<body>
+leeCarousel
+
+version: Beta 1
 
 
-<div id="carousal_wrap">
-    
-</div>
+example:
 
+<div id="carousal_wrap"></div>
 
 <script type="text/javascript" src="leeCarousel.js"></script>
 
-<script>
-
-    leeCarousel.init({
+leeCarousel.init({
 
         id: "carousal_wrap",
         img: [
@@ -28,7 +21,4 @@
         width: 800,
         height: 195,
         speed: 10
-    });
-</script>
-</body>
-</html>
+});
