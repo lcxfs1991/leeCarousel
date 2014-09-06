@@ -1,23 +1,4 @@
-    // var item = document.getElementById("slider3");
     
-    // var decre = -10;
-
-    // var mov = setInterval(function(){
-
-    //     item.style.position = "relative";
-    //     item.style.left = decre+"px";
-    //     decre -= 10;
-
-    //     if (item.style.left == "-800px"){
-    //         clearInterval(mov);
-    //         // item.style.left = "0px";
-    //     }
-
-    // }, 10);
-
-
-
-
     var leeCarousel = {
 
         id: "carousal_wrap",
@@ -98,16 +79,16 @@
             var gapTime = this.width / this.speed + this.gap;
             var that = this;
 
-            var mov = null;
-            var outerMove = null;
+            var innerMov = null;
+            var outerMov = null;
 
-            outerMove = setInterval(outerInterval, gapTime);
+            outerMov = setInterval(outerInterval, gapTime);
 
             function outerInterval(){
 
-                clearInterval(outerMove);
+                clearInterval(outerMov);
 
-                mov = setInterval(function(){
+                innerMov = setInterval(function(){
 
                    that.imgItemArr[current].style.left = decreCurrent+"px";
                    that.imgItemArr[next].style.left = decreNext+"px";
@@ -116,8 +97,8 @@
                    decreNext -= 10;
 
                    if (that.imgItemArr[current].style.left == "-"+that.width+"px"){
-
-                        clearInterval(mov);
+                        
+                        clearInterval(innerMov);
 
                         that.imgItemArr[current].style.left = that.width+"px";
                         that.imgItemArr[next].style.left = 0+"px";
@@ -139,10 +120,7 @@
 
                         }
 
-                        console.log(that.imgItemArr[current].style.left);
-                        console.log(that.imgItemArr[next].style.left);
-
-                        outerMove = setInterval(outerInterval, gapTime);
+                        outerMov = setInterval(outerInterval, gapTime);
 
                    }
 
