@@ -1,15 +1,15 @@
     
     var leeCarousel = {
 
-        id: "carousal_wrap",
-        img: [],
-        style: "default",
-        width: 800,
-        height: 195,
-        speed: 1,
-        gap: 3000,
-        divNode: null,
-        imgItemArr: [],
+        id: "carousal_wrap",  // div element id
+        img: [],              // img array
+        style: "default",     // slider style
+        width: 800,           // div width
+        height: 195,          // div minHeight
+        speed: 1,             // speed of slider
+        gap: 3000,            // waiter time between 2 images
+        divNode: null,        // div of that id
+        imgItemArr: [],       // image DOM
 
         init: function(config){
 
@@ -30,6 +30,7 @@
 
         },
 
+        // create DOM nodes
         createNode: function(){
 
             this.divNode.style.width = this.width+"px";
@@ -67,6 +68,7 @@
 
         },
 
+        // start sliding
         startSliding: function(){
 
             len = this.imgItemArr.length;
