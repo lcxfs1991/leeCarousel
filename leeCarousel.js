@@ -81,16 +81,8 @@
             var gapTime = this.width / this.speed + this.gap;
             var that = this;
 
-            var innerMov = null;
-            var outerMov = null;
 
-            outerMov = setInterval(outerInterval, gapTime);
-
-            function outerInterval(){
-
-                clearInterval(outerMov);
-
-                innerMov = setInterval(function(){
+            function startInterval(){
 
                    that.imgItemArr[current].style.left = decreCurrent+"px";
                    that.imgItemArr[next].style.left = decreNext+"px";
@@ -99,8 +91,6 @@
                    decreNext -= 10;
 
                    if (that.imgItemArr[current].style.left == "-"+that.width+"px"){
-
-                        clearInterval(innerMov);
 
                         that.imgItemArr[current].style.left = that.width+"px";
                         that.imgItemArr[next].style.left = 0+"px";
@@ -122,17 +112,19 @@
 
                         }
 
-                        outerMov = setInterval(outerInterval, gapTime);
+                        setTimeout(startInterval, gapTime);
 
+                        
+                   }
+                   else{
+                        setTimeout(startInterval, this.speed);
                    }
 
 
+                }
 
-                }, this.speed);
-
-            }
-
-
+                setTimeout(startInterval, gapTime);
+                
 
         }
 
