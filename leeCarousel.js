@@ -111,20 +111,23 @@
                             pointer = 0;
 
                         }
-
+                        //restart animation afte gapTime
                         setTimeout(startInterval, gapTime);
 
                         
                    }
                    else{
+
+                        //repeat animation
                         setTimeout(startInterval, this.speed);
                    }
 
 
                 }
 
+                //first start of animation
                 setTimeout(startInterval, gapTime);
-                
+
 
         }
 
